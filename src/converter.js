@@ -263,18 +263,19 @@ showdown.Converter = function (converterOptions) {
     }
 
     var globals = {
-      gHtmlBlocks:     [],
-      gHtmlMdBlocks:   [],
-      gHtmlSpans:      [],
-      gUrls:           {},
-      gTitles:         {},
-      gDimensions:     {},
-      gListLevel:      0,
-      hashLinkCounts:  {},
-      langExtensions:  langExtensions,
-      outputModifiers: outputModifiers,
-      converter:       this,
-      ghCodeBlocks:    [],
+      gHtmlBlocks:          [],
+      gHtmlMdBlocks:        [],
+      gHtmlSpans:           [],
+      gUrls:                {},
+      gTitles:              {},
+      gDimensions:          {},
+      gListLevel:           0,
+      hashLinkCounts:       {},
+      langExtensions:       langExtensions,
+      outputModifiers:      outputModifiers,
+      converter:            this,
+      ghCodeBlocks:         [],
+      mentionedHandleInfos: {}, // handle color and links..
       metadata: {
         parsed: {},
         raw: '',

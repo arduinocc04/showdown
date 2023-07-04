@@ -33,6 +33,17 @@ showdown.subParser('makehtml.spanGamut', function (text, options, globals) {
   // now we encode amps and angles
   text = showdown.subParser('makehtml.encodeAmpsAndAngles')(text, options, globals);
 
+  text = text.replace(/@(\w+)@/, function (wholematch, handle) {
+    var color = globals.mentionedHandleInfos[handle].color;
+    var link = globals.mentionedHandleInfos[handle].link;
+
+    if (link === 'NONE') {
+      return '<span style = "color:' + color + ';">' + handle + '</span>';
+    } else {
+      return '<a href = ' + '"' + link + '" ' + 'style = "color:' + color + ';">' + handle + '</a>';
+    }
+  });
+
   // Do hard breaks
   if (options.simpleLineBreaks) {
     // GFM style hard breaks
