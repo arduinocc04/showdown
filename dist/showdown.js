@@ -1,4 +1,4 @@
-;/*! showdown v 3.0.0-alpha - 04-07-2023 */
+;/*! showdown v 3.0.0-alpha - 29-08-2023 */
 (function(){
 /**
  * Created by Tivie on 13-07-2015.
@@ -589,16 +589,6 @@ showdown.validateExtension = function (ext) {
 
 if (!showdown.hasOwnProperty('helper')) {
   showdown.helper = {};
-}
-
-if (typeof this === 'undefined' && typeof window !== 'undefined') {
-  showdown.helper.document = window.document;
-} else {
-  if (typeof this.document === 'undefined' && typeof this.window === 'undefined') {
-    var jsdom = require('jsdom');
-    this.window = new jsdom.JSDOM('', {}).window; // jshint ignore:line
-  }
-  showdown.helper.document = this.window.document;
 }
 
 /**
