@@ -4932,7 +4932,7 @@ showdown.subParser('makehtml.spanGamut', function (text, options, globals) {
   // now we encode amps and angles
   text = showdown.subParser('makehtml.encodeAmpsAndAngles')(text, options, globals);
 
-  text = text.replace(/@(\w+)@/, function (wholematch, handle) {
+  text = text.replace(/@(\w+)@/g, function (wholematch, handle) {
     var color = globals.mentionedHandleInfos[handle].color;
     var link = globals.mentionedHandleInfos[handle].link;
 
