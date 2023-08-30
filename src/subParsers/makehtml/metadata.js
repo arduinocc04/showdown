@@ -4,7 +4,7 @@
 showdown.subParser('makehtml.metadata', function (text, options, globals) {
   'use strict';
 
-  text = text.replaceAll(/!!([\wㄱ-ㅎ가-힣]+)!(\w+)!(NONE|https?:\/\/[\w\-\.\/]+)!!/, function (wholematch, handle, color, link) {
+  text = text.replace(/!!([\wㄱ-ㅎ가-힣]+)!(\w+)!(NONE|https?:\/\/[\w\-\.\/]+)!!/g, function (wholematch, handle, color, link) {
     globals.mentionedHandleInfos[handle] = {
       'color': color,
       'link': link
