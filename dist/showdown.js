@@ -1,4 +1,4 @@
-;/*! showdown v 3.0.0-alpha - 29-08-2023 */
+;/*! showdown v 3.0.0-alpha - 30-08-2023 */
 (function(){
 /**
  * Created by Tivie on 13-07-2015.
@@ -4730,7 +4730,7 @@ showdown.subParser('makehtml.lists', function (text, options, globals) {
 showdown.subParser('makehtml.metadata', function (text, options, globals) {
   'use strict';
 
-  text = text.replace(/!!([\wㄱ-ㅎ가-힣]+)!(\w+)!(NONE|https?:\/\/[\w\-\.\/]+)!!/, function (wholematch, handle, color, link) {
+  text = text.replaceAll(/!!([\wㄱ-ㅎ가-힣]+)!(\w+)!(NONE|https?:\/\/[\w\-\.\/]+)!!/, function (wholematch, handle, color, link) {
     globals.mentionedHandleInfos[handle] = {
       'color': color,
       'link': link
